@@ -10,7 +10,7 @@ public class Client {
      * (auch bezeichnet als CLI, Terminal)
      *
      */
-    void display( int aNumber ){
+    public void display( int aNumber ){
 
         Translator translator = TranslatorFactory.createTranslator();
         String result = translator.translateNumber(aNumber);
