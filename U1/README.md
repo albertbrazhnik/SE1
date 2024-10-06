@@ -25,13 +25,23 @@
 4) Was ist der Vorteil einer separaten Test-Klasse?
 
    Antwort:
-   Die Trennung erhöht zum einen die Übersicht über das gesamte Projekt
+   Die Trennung erhöht die Übersicht über das gesamte Projekt. Außerdem kann man dadurch Veränderungen an den anderen Klassen vornehmen, ohne die Testklasse öndern zu müssen.
+   Ein Blackbox Testing ist dadurch auch möglich, da man ohne Zugriff auf den inneren Code testen kann.
    
 6) Was ist bei einem Blackbox-Test der Sinn von Äquivalenzklassen?
 
    Antwort:
+   Der Sinn von Äquivalenzklassen im Blackbox-Testverfahren ist, die Anzahl der notwendigen Testfälle zu reduzieren, ohne die Abdeckung zu gefährden.
+   Bei der Äquivalenzklassenbildung wird der Eingabebereich in Klassen unterteilt, die ähnliche Verhaltensweisen des Systems erwarten lassen.
+   Für jede Äquivalenzklasse wird ein Repräsentant ausgewählt, der stellvertretend für alle Werte in dieser Klasse getestet wird.
+   Somit lassen sich die Testfälle minimieren.
 
+8) Warum ist ein Blackbox-Test mit JUnit auf der Klasse Client nicht unmittelbar durchführbar?
 
-7) Warum ist ein Blackbox-Test mit JUnit auf der Klasse Client nicht unmittelbar durchführbar?
+   Antwort:
+   Ein Blackbox-Test auf der Klasse Client ist deshalb nicht unmittelbar durchführbar, weil Client keinen direkten Code für die Übersetzung enthält.
+   Die Class verwendet das Translator-Interface, welches durch eine konkrete Implementierung (z.B. GermanTranslator) ersetzt wird.
+   In einem Blackbox-Test wird normalerweise das Verhalten des Systems getestet, ohne den inneren Code zu kennen.
+   In diesem Fall wird Client aber von Translator-Objekten beeinflusst, was den Test erschwert.
 
-   Antwort: 
+   
